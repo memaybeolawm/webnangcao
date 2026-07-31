@@ -1,0 +1,259 @@
+{
+  "users": [
+    {
+      "username": "demo",
+      "email": "demo@domain.com",
+      "password": "password"
+    },
+    {
+      "username": "kheng",
+      "email": "accclonekia3580@gmail.com",
+      "password": "memaybeovl"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "APX-210095-E811D7",
+      "username": "kheng",
+      "items": [
+        {
+          "id": "prebuilt-titan",
+          "name": "Apex Titan-9 Gaming Rig",
+          "price": 2499,
+          "quantity": 1
+        },
+        {
+          "id": "kb-hyperion",
+          "name": "Apex Hyperion Linear Keyboard",
+          "price": 129,
+          "quantity": 1
+        },
+        {
+          "id": "mon-odyssey",
+          "name": "Odyssey G7 27\" Curved Monitor",
+          "price": 499,
+          "quantity": 1
+        },
+        {
+          "id": "mouse-cobra",
+          "name": "Apex Cobra Wireless Mouse",
+          "price": 89,
+          "quantity": 1
+        },
+        {
+          "id": "headset-void",
+          "name": "Apex Void 7.1 Wireless Headset",
+          "price": 119,
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "subtotal": 3335,
+        "discount": 333.5,
+        "tax": 240.12,
+        "total": 3241.62
+      },
+      "date": "2026-06-12T10:46:50.063Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prebuilt-titan",
+      "name": "Apex Titan-9 Gaming Rig",
+      "category": "prebuilt",
+      "price": 2499,
+      "rating": 4.9,
+      "reviews": 142,
+      "badge": "Bestseller",
+      "desc": "The absolute pinnacle of gaming performance. Armed with a liquid-cooled AMD Ryzen 9 processor and the powerhouse NVIDIA GeForce RTX 4080, the Titan-9 crushes high-refresh-rate 4K gaming and streaming workloads alike. Housed in our signature glass panoramic chassis.",
+      "features": [
+        "Ryzen 9 7900X Liquid Cooled",
+        "NVIDIA RTX 4080 16GB",
+        "32GB DDR5 6000MHz RAM",
+        "2TB NVMe PCIe 4.0 SSD",
+        "850W Gold PSU",
+        "Windows 11 Home"
+      ]
+    },
+    {
+      "id": "prebuilt-nebula",
+      "name": "Apex Nebula-7 Pro",
+      "category": "prebuilt",
+      "price": 1699,
+      "rating": 4.8,
+      "reviews": 96,
+      "badge": "Trending",
+      "desc": "Compact footprint, massive performance. The Nebula-7 Pro is an ITX masterpiece featuring an optimized airflow chassis, GeForce RTX 4070, and Ryzen 7. Perfect for small spaces without compromising an inch of frames or thermal performance.",
+      "features": [
+        "Ryzen 7 7700X CPU",
+        "NVIDIA RTX 4070 12GB",
+        "16GB DDR5 5600MHz RAM",
+        "1TB NVMe PCIe 4.0 SSD",
+        "750W SFX Gold PSU",
+        "Liquid Cooling Installed"
+      ]
+    },
+    {
+      "id": "ram-veng",
+      "name": "Vengeance RGB 32GB DDR5 Memory",
+      "category": "ram",
+      "price": 149,
+      "rating": 4.7,
+      "reviews": 320,
+      "badge": "RGB Elite",
+      "desc": "Optimize your system memory with ultra-fast Vengeance DDR5. Operating at a blistering 6000MHz, this dual-channel 32GB kit features dynamic ten-zone RGB lighting and hand-screened ICs for advanced overclocking reliability.",
+      "features": [
+        "Speed: 6000 MHz",
+        "Capacity: 32GB (2x16GB)",
+        "Timing: CL36-36-36-76",
+        "Voltage: 1.35V",
+        "Intel XMP 3.0 Support",
+        "Aluminum Heatspreader"
+      ]
+    },
+    {
+      "id": "ram-dom",
+      "name": "Dominator Extreme 64GB DDR5 Memory",
+      "category": "ram",
+      "price": 299,
+      "rating": 4.9,
+      "reviews": 87,
+      "badge": "Extreme",
+      "desc": "The ultimate DDR5 memory kit for creators and extreme enthusiasts. Dominator Platinum RGB features premium craftsmanship, forged aluminum heatspreaders with patented DHX cooling, and 6400MHz clock speeds.",
+      "features": [
+        "Speed: 6400 MHz",
+        "Capacity: 64GB (2x32GB)",
+        "Timing: CL32-40-40-84",
+        "Voltage: 1.40V",
+        "AMD EXPO Optimized",
+        "Custom Capellix RGB"
+      ]
+    },
+    {
+      "id": "mon-odyssey",
+      "name": "Odyssey G7 27\" Curved Monitor",
+      "category": "monitor",
+      "price": 499,
+      "rating": 4.8,
+      "reviews": 215,
+      "badge": "240Hz Curved",
+      "desc": "Unmatched immersion. Featuring a deep 1000R curvature matching the human eye, a lightning-fast 240Hz refresh rate, QHD resolution, and 1ms response time, the Odyssey G7 is the perfect competitive display.",
+      "features": [
+        "Screen Size: 27 Inches",
+        "Panel Type: Curved VA",
+        "Refresh Rate: 240Hz",
+        "Response Time: 1ms (GtG)",
+        "Resolution: 2560 x 1440",
+        "G-Sync Compatible"
+      ]
+    },
+    {
+      "id": "mon-predator",
+      "name": "Predator X34 Ultra-Wide Monitor",
+      "category": "monitor",
+      "price": 799,
+      "rating": 4.6,
+      "reviews": 64,
+      "badge": "Ultrawide 21:9",
+      "desc": "Expand your field of view. The Predator 34\" Ultrawide offers panoramic curved gaming with an IPS panel for stunning color accuracy, 144Hz refresh rate, and NVIDIA G-Sync Ultimate for tear-free gameplay.",
+      "features": [
+        "Screen Size: 34 Inches",
+        "Panel Type: IPS Curved",
+        "Refresh Rate: 144Hz",
+        "Response Time: 0.5ms (Min)",
+        "Resolution: 3440 x 1440",
+        "NVIDIA G-Sync Ultimate"
+      ]
+    },
+    {
+      "id": "case-titan",
+      "name": "Apex Titan Glass Mid-Tower",
+      "category": "case",
+      "price": 189,
+      "rating": 4.8,
+      "reviews": 104,
+      "badge": "Airflow + RGB",
+      "desc": "A designer's dream. Showcase your setup with three premium tinted tempered glass panels. Features an dual-chamber layout for clean cable routing and comes loaded with four addressable ARGB fans pre-wired to an smart controller.",
+      "features": [
+        "Motherboard Support: ATX, mATX, ITX",
+        "Panoramic Dual Chamber",
+        "4x 120mm ARGB Fans Included",
+        "GPU Max Length: 420mm",
+        "Tempered Glass Front & Sides",
+        "Radiator Support up to 360mm"
+      ]
+    },
+    {
+      "id": "case-nebula",
+      "name": "Nebula Mini-ITX Case",
+      "category": "case",
+      "price": 139,
+      "rating": 4.7,
+      "reviews": 51,
+      "badge": "Compact Master",
+      "desc": "A small-form-factor powerhouse with zero performance compromises. Built with mesh ventilation panels on five sides to maximize airflow, this Mini-ITX chassis supports full-sized triple-slot graphics cards and custom water cooling.",
+      "features": [
+        "Motherboard Support: Mini-ITX Only",
+        "Ultra-Airflow Mesh Panels",
+        "Triple-Slot GPU Support",
+        "PSU: SFX/SFX-L Supported",
+        "Vertical Mount Included",
+        "Tool-less Snap Panels"
+      ]
+    },
+    {
+      "id": "kb-hyperion",
+      "name": "Apex Hyperion Linear Keyboard",
+      "category": "keyboard",
+      "price": 129,
+      "rating": 4.9,
+      "reviews": 183,
+      "badge": "Hot-Swappable",
+      "desc": "Bespoke typing feel right out of the box. Featuring a heavy CNC-milled aluminum top frame, hot-swappable sockets, pre-lubed linear switches, and sound-absorbing silicone gaskets for a quiet, buttery keystroke.",
+      "features": [
+        "Form Factor: Tenkeyless (TKL)",
+        "Switches: APEX Red Linear",
+        "Keycaps: PBT Double-Shot",
+        "Hot-swap: 3/5-pin Sockets",
+        "Gasket Mounted Plate",
+        "Custom Coiled Cable Included"
+      ]
+    },
+    {
+      "id": "mouse-cobra",
+      "name": "Apex Cobra Wireless Mouse",
+      "category": "mouse",
+      "price": 89,
+      "rating": 4.8,
+      "reviews": 247,
+      "badge": "59g Ultralight",
+      "desc": "Zero drag. Zero lag. Clocking in at an ultralight 59 grams, the Cobra features our proprietary 26K DPI optical sensor and 2.4GHz hyperspeed wireless tech for pixel-perfect tracking and instant 0.2ms click response.",
+      "features": [
+        "Sensor: 26,000 DPI Optical",
+        "Weight: 59 Grams",
+        "Battery: Up to 90 Hours",
+        "Connection: 2.4GHz / BT / Wired",
+        "Switches: Gen-3 Optical (90M Clicks)",
+        "PTFE Glide Feet"
+      ]
+    },
+    {
+      "id": "headset-void",
+      "name": "Apex Void 7.1 Wireless Headset",
+      "category": "headset",
+      "price": 119,
+      "rating": 4.6,
+      "reviews": 133,
+      "badge": "Spatial 7.1",
+      "desc": "Hear everything. Featuring 50mm Hi-Res neodymium drivers and 7.1 DTS spatial sound, the Void gaming headset delivers absolute audio precision. Built with plush cooling-gel earcups and a broadcast-grade fold-away microphone.",
+      "features": [
+        "Drivers: 50mm Neodymium",
+        "Audio: DTS Headphone:X 2.0",
+        "Wireless: 2.4GHz Low Latency",
+        "Battery: Up to 30 Hours",
+        "Earcups: Memory Foam & Cooling Gel",
+        "Mic: Bidirectional Noise Canceling"
+      ]
+    }
+  ]
+}

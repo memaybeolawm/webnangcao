@@ -1,0 +1,10 @@
+Tên đăng nhập (Username)	Mật khẩu (Password)	Vai trò (Role)	Chức năng / Ghi chú
+admin	admin	admin	Quản trị viên (Toàn quyền quản trị hệ thống, cấm tài khoản, chỉnh sửa sản phẩm...)
+demo	password	user	Tài khoản khách hàng chạy thử (Đã được ép hạng Platinum VIP)
+kheng	memaybeovl	user	Tài khoản khách hàng chính (Tổng chi tiêu ~11 triệu VND, hạng Platinum VIP)
+memaybeo	khengnek2005	user	Tài khoản khách hàng phụ (Hạng Silver VIP)
+lacbeovl	khengnek2005	user	Tài khoản khách hàng phụ
+sales01	password	sales	Nhân viên phòng Kinh doanh (Dùng trong mô phỏng ERP)
+purchase01	password	purchase	Nhân viên phòng Mua hàng (Dùng trong mô phỏng ERP)
+warehouse01	password	warehouse	Nhân viên phòng Kho (Dùng trong mô phỏng ERP)
+accountant01	password	accountant	Nhân viên phòng Kế toán (Dùng trong mô phỏng ERP)

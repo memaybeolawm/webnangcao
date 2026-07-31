@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Gear | Premium Gaming PCs, Hardware & Peripherals</title>
+  <meta name="description" content="Forged for performance. Engineered for glory. Shop extreme custom gaming PCs, curved monitors, ultra-fast RAM, high-airflow cases, and elite gaming peripherals.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container header-container">
+      <div class="logo" id="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        APEX<span>//</span>GEAR
+      </div>
+      <nav>
+        <span class="nav-link active" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">Explore</span>
+        <span class="nav-link" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Catalog</span>
+        <span class="nav-link" onclick="document.getElementById('builder-section').scrollIntoView({behavior: 'smooth'})">PC Builder</span>
+        <span class="nav-link" onclick="document.getElementById('footer').scrollIntoView({behavior: 'smooth'})">Support</span>
+      </nav>
+      <div class="header-actions">
+        <!-- Account Status Area -->
+        <div id="auth-status-container" class="auth-status-container">
+          <!-- Populated by app.js (e.g. Welcome message + Order history button OR Login button) -->
+          <button id="nav-login-btn" class="btn-secondary nav-auth-btn">Sign In</button>
+        </div>
+
+        <div class="search-bar-container">
+          <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search gear, components...">
+        </div>
+        <button id="cart-btn" class="header-btn" title="Open Shopping Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          <div id="cart-badge" class="cart-badge" style="display: none;">0</div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tagline">Elite Hardware Syndicate</div>
+        <h1 class="hero-title">ASCEND YOUR<br><span>SETUP TO GLORY</span></h1>
+        <p class="hero-desc">Experience next-generation performance. We design extreme gaming rigs, high-refresh displays, rapid memory components, and ergonomic peripherals for competitive dominance.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('builder-section').scrollIntoView({behavior: 'smooth'})">Build Your Rig</button>
+          <button class="btn-secondary" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Browse Gear</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">150+<span>FPS</span></span>
+            <span class="stat-label">Average 4K Ultra</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3<span>Yrs</span></span>
+            <span class="stat-label">Premium Warranty</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Live Tech Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow-back"></div>
+        <div class="hero-img-container">
+          <img src="assets/hero_pc.png" class="hero-img" alt="Apex Liquid Cooled Gaming Desktop Rig">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-commerce Store Catalog -->
+  <section id="catalog-section" class="catalog-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-info">
+          <span class="section-subtitle">Gear Emporium</span>
+          <h2 class="section-title">CHOOSE YOUR WEAPONS</h2>
+        </div>
+      </div>
+
+      <!-- Filters Toolbar -->
+      <div class="filter-bar">
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="all">All Products</button>
+          <button class="filter-btn" data-category="prebuilt">Systems</button>
+          <button class="filter-btn" data-category="monitor">Monitors</button>
+          <button class="filter-btn" data-category="ram">Memory (RAM)</button>
+          <button class="filter-btn" data-category="case">Cases</button>
+          <button class="filter-btn" data-category="keyboard">Keyboards</button>
+          <button class="filter-btn" data-category="mouse">Mice</button>
+          <button class="filter-btn" data-category="headset">Headsets</button>
+        </div>
+        <div class="filter-controls">
+          <select id="sort-select" class="sort-select" aria-label="Sort products">
+            <option value="rating">Sort by: Top Rated</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Alphabetical (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-grid" class="products-grid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Custom PC Builder -->
+  <section id="builder-section" class="builder-section">
+    <div class="container">
+      <div class="section-info" style="text-align: center; margin: 0 auto 40px auto;">
+        <span class="section-subtitle">Rig Configurator</span>
+        <h2 class="section-title" style="margin-bottom:12px">INTERACTIVE SYSTEM BUILDER</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Design your dream Battle Station. Select your core components and accessories, view live system diagnostics, and purchase them as a single pre-tested custom package.</p>
+      </div>
+
+      <div class="builder-layout">
+        <!-- Component Selection Steps -->
+        <div class="builder-options">
+          
+          <!-- Step 1: Case -->
+          <div class="builder-step active" id="builder-step-case">
+            <div class="builder-step-header">
+              <h3 class="builder-step-title">
+                <span class="builder-step-number">1</span>
+                Chassis (Case)
+              </h3>
+            </div>
+            <div id="builder-case-grid" class="builder-items-grid">
+              <!-- Cards load dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 2: RAM -->
+          <div class="builder-step" id="builder-step-ram">
+            <div class="builder-step-header">
+              <h3 class="builder-step-title">
+                <span class="builder-step-number">2</span>
+                Memory (RAM)
+              </h3>
+            </div>
+            <div id="builder-ram-grid" class="builder-items-grid">
+              <!-- Cards load dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 3: Monitor -->
+          <div class="builder-step" id="builder-step-monitor">
+            <div class="builder-step-header">
+              <h3 class="builder-step-title">
+                <span class="builder-step-number">3</span>
+                Display (Monitor)
+              </h3>
+            </div>
+            <div id="builder-monitor-grid" class="builder-items-grid">
+              <!-- Cards load dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 4: Accessories -->
+          <div class="builder-step" id="builder-step-peripheral">
+            <div class="builder-step-header">
+              <h3 class="builder-step-title">
+                <span class="builder-step-number">4</span>
+                Peripherals Bundle
+              </h3>
+            </div>
+            <div id="builder-peripheral-grid" class="builder-items-grid">
+              <!-- Cards load dynamically -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- System Builder Summary Panel -->
+        <div class="builder-summary">
+          <h3 class="builder-summary-title">System Preview</h3>
+          <div class="builder-preview-box">
+            <div class="builder-preview-glow"></div>
+            <div id="builder-preview-img" class="builder-preview-img">
+              <!-- Case SVG rendered here -->
+            </div>
+          </div>
+
+          <div class="builder-spec-list">
+            <div class="builder-spec-item">
+              <span class="builder-spec-label">Case:</span>
+              <span id="spec-case" class="builder-spec-value">-</span>
+            </div>
+            <div class="builder-spec-item">
+              <span class="builder-spec-label">RAM:</span>
+              <span id="spec-ram" class="builder-spec-value">-</span>
+            </div>
+            <div class="builder-spec-item">
+              <span class="builder-spec-label">Monitor:</span>
+              <span id="spec-monitor" class="builder-spec-value">-</span>
+            </div>
+            <div class="builder-spec-item">
+              <span class="builder-spec-label">Accessories:</span>
+              <span id="spec-peripheral" class="builder-spec-value">-</span>
+            </div>
+            <div class="builder-spec-item" style="border-top:1px solid var(--border-light); padding-top:10px; margin-top:5px">
+              <span class="builder-spec-label">CPU + GPU Core Package:</span>
+              <span class="builder-spec-value">Core i7 + RTX 4070 (Included)</span>
+            </div>
+          </div>
+
+          <!-- Stability Check Notification -->
+          <div id="builder-compatibility" class="builder-compatibility">
+            <!-- Stability message via JS -->
+          </div>
+
+          <div class="builder-total-section">
+            <span class="builder-total-label">Assembled Rig Total:</span>
+            <span id="builder-total-price" class="builder-total-price">$0.00</span>
+          </div>
+
+          <button id="builder-add-btn" class="btn-primary builder-btn">Assemble & Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Slide-out Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-title">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          SHOPPING CART
+        </h3>
+        <span id="cart-close-btn" class="cart-close-btn">✕</span>
+      </div>
+      <div id="cart-items-container" class="cart-items-container">
+        <!-- Cart Items loaded via JS -->
+      </div>
+
+      <div class="cart-summary">
+        <!-- Promo Coupon Panel -->
+        <div class="cart-promo-section">
+          <input type="text" id="promo-input" class="promo-input" placeholder="Coupon Code (APEX10)">
+          <button id="promo-btn" class="promo-btn">Apply</button>
+        </div>
+
+        <div class="cart-totals">
+          <div class="cart-total-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+          <div id="cart-discount-row" class="cart-total-row discount" style="display: none;">
+            <span>Discount (10%)</span>
+            <span id="cart-discount">-$0.00</span>
+          </div>
+          <div class="cart-total-row">
+            <span>Sales Tax (8%)</span>
+            <span id="cart-tax">$0.00</span>
+          </div>
+          <div class="cart-total-row grand-total">
+            <span>Grand Total</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+        </div>
+        <button id="checkout-btn" class="btn-primary checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick View Modal -->
+  <div id="detail-overlay" class="modal-overlay">
+    <div class="modal-content product-detail-modal">
+      <span id="detail-close-btn" class="modal-close-btn">✕</span>
+      <div class="detail-layout">
+        <div id="detail-gallery" class="detail-gallery">
+          <!-- Injected SVG -->
+        </div>
+        <div class="detail-info">
+          <span id="detail-cat" class="detail-cat">-</span>
+          <h2 id="detail-name" class="detail-name">-</h2>
+          <div id="detail-rating" class="detail-rating">
+            <!-- Stars -->
+          </div>
+          <div id="detail-price" class="detail-price">$0.00</div>
+          <p id="detail-desc" class="detail-desc">-</p>
+          <div class="detail-features">
+            <h4 class="detail-feature-title">Product Specifications</h4>
+            <ul id="detail-features-list" class="detail-feature-list">
+              <!-- Spec bullets loaded via JS -->
+            </ul>
+          </div>
+          <div class="detail-actions">
+            <div class="detail-qty">
+              <span id="detail-qty-minus" class="detail-qty-btn">-</span>
+              <span id="detail-qty-val" class="detail-qty-val">1</span>
+              <span id="detail-qty-plus" class="detail-qty-btn">+</span>
+            </div>
+            <button id="detail-add-btn" class="btn-primary detail-add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Authentication Modal (Login / Register) -->
+  <div id="auth-overlay" class="modal-overlay">
+    <div class="modal-content auth-modal">
+      <span id="auth-close-btn" class="modal-close-btn">✕</span>
+      
+      <!-- Authentication Tabs -->
+      <div class="auth-tabs">
+        <button id="tab-login" class="auth-tab-btn active">Sign In</button>
+        <button id="tab-register" class="auth-tab-btn">Create Account</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form-panel active" onsubmit="event.preventDefault();">
+        <h3 class="auth-form-title">Welcome Back</h3>
+        <p class="auth-form-desc">Enter your account credentials to log in.</p>
+        <div id="login-error" class="auth-error-msg" style="display: none;"></div>
+        <div class="form-group">
+          <label for="login-username">Username or Email</label>
+          <input type="text" id="login-username" class="form-input" placeholder="e.g. demo" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="e.g. password" required>
+        </div>
+        <button type="submit" id="submit-login-btn" class="btn-primary auth-submit-btn">Sign In</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form-panel" onsubmit="event.preventDefault();">
+        <h3 class="auth-form-title">Create Account</h3>
+        <p class="auth-form-desc">Complete the fields below to register a new account.</p>
+        <div id="register-error" class="auth-error-msg" style="display: none;"></div>
+        <div class="form-group">
+          <label for="register-username">Username</label>
+          <input type="text" id="register-username" class="form-input" placeholder="Min 3 characters" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email Address</label>
+          <input type="email" id="register-email" class="form-input" placeholder="e.g. name@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" class="form-input" placeholder="Min 6 characters" required>
+        </div>
+        <button type="submit" id="submit-register-btn" class="btn-primary auth-submit-btn">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order History Modal -->
+  <div id="orders-overlay" class="modal-overlay">
+    <div class="modal-content orders-modal">
+      <span id="orders-close-btn" class="modal-close-btn">✕</span>
+      <h2 class="orders-title">Purchase History</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 24px;">Browse all past simulated transactions recorded under your account.</p>
+      
+      <div id="orders-list-container" class="orders-list-container">
+        <!-- Loaded via AJAX -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Multi-step Modal -->
+  <div id="checkout-overlay" class="modal-overlay">
+    <div class="modal-content checkout-modal">
+      <span id="checkout-close-btn" class="modal-close-btn">✕</span>
+      
+      <!-- Stepper Progress Bar -->
+      <div class="checkout-steps-nav">
+        <div class="checkout-steps-line"></div>
+        <div id="checkout-progress" class="checkout-steps-progress"></div>
+        
+        <div class="checkout-step-nav-item active">
+          <div class="checkout-step-nav-dot">1</div>
+          <span class="checkout-step-nav-label">Shipping</span>
+        </div>
+        <div class="checkout-step-nav-item">
+          <div class="checkout-step-nav-dot">2</div>
+          <span class="checkout-step-nav-label">Payment</span>
+        </div>
+        <div class="checkout-step-nav-item">
+          <div class="checkout-step-nav-dot">3</div>
+          <span class="checkout-step-nav-label">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Checkout Forms -->
+      <form id="checkout-form" onsubmit="event.preventDefault();">
+        
+        <!-- Step 1: Shipping Address -->
+        <div id="checkout-step-1" class="checkout-form-step active">
+          <h3 class="checkout-form-title">Shipping Address</h3>
+          <!-- Guard Banner if not logged in -->
+          <div id="checkout-login-guard" class="checkout-login-guard" style="display: none;">
+            <span>⚠️ You must be logged in to place an order.</span>
+            <button type="button" id="checkout-signin-shortcut" class="btn-primary" style="padding: 8px 16px; font-size: 12px; margin-top: 10px;">Sign In Now</button>
+          </div>
+          <div id="checkout-shipping-fields">
+            <div class="form-group">
+              <label for="ship-name">Full Name</label>
+              <input type="text" id="ship-name" class="form-input" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="ship-email">Email Address</label>
+              <input type="email" id="ship-email" class="form-input" placeholder="john@domain.com" required>
+            </div>
+            <div class="form-group">
+              <label for="ship-address">Street Address</label>
+              <input type="text" id="ship-address" class="form-input" placeholder="123 Gaming Ave" required>
+            </div>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="ship-city">City</label>
+                <input type="text" id="ship-city" class="form-input" placeholder="Neo City" required>
+              </div>
+              <div class="form-group">
+                <label for="ship-zip">Zip/Postal Code</label>
+                <input type="text" id="ship-zip" class="form-input" placeholder="94016" required>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Details -->
+        <div id="checkout-step-2" class="checkout-form-step">
+          <h3 class="checkout-form-title">Simulated Payment</h3>
+          <p style="color:var(--text-secondary); font-size:12px; margin-bottom:10px">Secure demo gateway. Enter any dummy credit details to complete.</p>
+          <div class="form-group">
+            <label for="pay-card">Card Number</label>
+            <input type="text" id="pay-card" class="form-input" placeholder="4111 2222 3333 4444" maxlength="19" required>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="pay-exp">Expiration Date</label>
+              <input type="text" id="pay-exp" class="form-input" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            <div class="form-group">
+              <label for="pay-cvv">CVV</label>
+              <input type="password" id="pay-cvv" class="form-input" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Success Confirmation Screen -->
+        <div id="checkout-step-3" class="checkout-form-step">
+          <div class="success-screen">
+            <div class="success-icon-box">✓</div>
+            <h3 class="success-title">ORDER SECURED!</h3>
+            <p class="success-message">Your order has been submitted to the database. We are assembling your custom configurations now.</p>
+            <div class="order-id-box">
+              Order Reference: <span id="success-order-id">APX-732-X82F</span>
+            </div>
+            <button type="button" id="success-close-btn" class="btn-primary" style="margin-top: 20px; padding: 10px 30px;">Continue Shopping</button>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="checkout-form-actions">
+          <button type="button" id="checkout-prev-btn" class="btn-secondary" style="display: none;">Back</button>
+          <button type="button" id="checkout-next-btn" class="btn-primary" style="margin-left: auto;">Continue to Payment</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <div class="logo">APEX<span>//</span>GEAR</div>
+        <p class="footer-about-text">We supply esports athletes and custom computing enthusiasts with unmatched hardware. Engineered for the ultimate frames and reliability.</p>
+        <div class="footer-socials">
+          <div class="social-icon">𝕏</div>
+          <div class="social-icon">📷</div>
+          <div class="social-icon">💬</div>
+          <div class="social-icon">▶</div>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Products</h4>
+        <ul class="footer-links-list">
+          <li><span style="cursor:pointer" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Gaming Systems</span></li>
+          <li><span style="cursor:pointer" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Monitors</span></li>
+          <li><span style="cursor:pointer" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">PC Components</span></li>
+          <li><span style="cursor:pointer" onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Peripherals</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-links-title">Resources</h4>
+        <ul class="footer-links-list">
+          <li><a href="#">PC Setup Guide</a></li>
+          <li><a href="#">Warranty Details</a></li>
+          <li><a href="#">Support Ticket</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4 class="footer-links-title">Stay Tuned</h4>
+        <p class="footer-newsletter-text">Subscribe to receive exclusive beta inventory releases, coupon codes, and build guides.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+          <input type="email" class="newsletter-input" placeholder="email@address.com" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 APEX GEAR. All rights reserved. Built with passion for PC enthusiasts.</p>
+      <div class="footer-badges">
+        <span>💳</span> <span>🅿</span> <span>🅳</span> <span>🅿</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
